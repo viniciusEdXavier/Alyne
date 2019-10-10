@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
     defaultConfig {
-        applicationId "br.com.fiap.tnhg.alyne"
+        applicationId "br.com.tnhg.alyneapp"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
