@@ -3,4 +3,7 @@
     <string name="usuario">Usuario:</string>
     <string name="senha">Senha:</string>
     <string name="login">LOGIN</string>
+    <string name="amigos">Amigos</string>
+    <string name="proximos_eventos">Próximos Eventos</string>
+    <string name="meus_eventos">Meus Eventos</string>
 </resources>
