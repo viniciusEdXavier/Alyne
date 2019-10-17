@@ -1,13 +1,13 @@
 package br.com.tnhg.alyneapp;
 
 public class Response {
-    private String sucesso;
+    private String token;
 
-    public String getSucesso() {
-        return sucesso;
+    public String getToken() {
+        return token;
     }
 
-    public void setSucesso(String sucesso) {
-        this.sucesso = sucesso;
+    public void setToken(String token) {
+        this.token = token;
     }
 }
