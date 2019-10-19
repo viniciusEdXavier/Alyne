@@ -41,38 +41,41 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
+        Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(myIntent);
+        finish();
 //        myIntent.putExtra("key", value); //Optional parameters
-
-        EditText userEdt = findViewById(R.id.edtUsuario);
-        EditText passEdt = findViewById(R.id.edtSenha);
-        final LoginActivity mainActivity = this;
-        String user = userEdt.getText().toString();
-        String pass = passEdt.getText().toString();
-        EndpointInterface api = retrofit.create(EndpointInterface.class);
-        api.getAuth(new Auth(user, pass)).enqueue(new Callback<Response>() {
-            @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                try {
-                    Log.d("tag", "DEUBOM");
-                    if(response.isSuccessful())
-                        Toast.makeText(mainActivity, response.body().toString(), Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(mainActivity, "null", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(myIntent);
-                    finish();
-                }
-                catch (Exception e){
-                    Log.e("tag", e.getMessage());
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<Response> call, Throwable t) {
-                Log.d("tag", "FALHA CATASTRÓFICA");
-                Log.d("tag", t.getMessage());
-            }
-        });
+//
+//        EditText userEdt = findViewById(R.id.edtUsuario);
+//        EditText passEdt = findViewById(R.id.edtSenha);
+//        final LoginActivity mainActivity = this;
+//        String user = userEdt.getText().toString();
+//        String pass = passEdt.getText().toString();
+//        EndpointInterface api = retrofit.create(EndpointInterface.class);
+//        api.getAuth(new Auth(user, pass)).enqueue(new Callback<Response>() {
+//            @Override
+//            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+//                try {
+//                    Log.d("tag", "DEUBOM");
+//                    if(response.isSuccessful())
+//                        Toast.makeText(mainActivity, response.body().toString(), Toast.LENGTH_SHORT).show();
+//                    else
+//                        Toast.makeText(mainActivity, "null", Toast.LENGTH_SHORT).show();
+//                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+//                    startActivity(myIntent);
+//                    finish();
+//                }
+//                catch (Exception e){
+//                    Log.e("tag", e.getMessage());
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Response> call, Throwable t) {
+//                Log.d("tag", "FALHA CATASTRÓFICA");
+//                Log.d("tag", t.getMessage());
+//            }
+//        });
     }
 }

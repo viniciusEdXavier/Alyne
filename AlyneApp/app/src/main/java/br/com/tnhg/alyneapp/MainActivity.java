@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new AmigosFragment(), getString(R.string.amigos));
-        viewPagerAdapter.addFragment(new DataFragment(), getString(R.string.proximos_eventos));
-        viewPagerAdapter.addFragment(new EventosFragment(), getString(R.string.meus_eventos));
+        viewPagerAdapter.addFragment(new EventosFragment(), getString(R.string.proximos_eventos));
+        viewPagerAdapter.addFragment(new MeusFragment(), getString(R.string.meus_eventos));
         viewPager.setAdapter(viewPagerAdapter);
 
 
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(viewPager);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        viewPager.setCurrentItem(1);
 
     }
 }
