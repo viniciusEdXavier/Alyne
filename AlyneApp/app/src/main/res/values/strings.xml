@@ -6,4 +6,9 @@
     <string name="amigos">Amigos</string>
     <string name="proximos_eventos">Próximos Eventos</string>
     <string name="meus_eventos">Meus Eventos</string>
+    <string name="buscar">buscar</string>
+    <string name="local_do_evento">Local do evento:</string>
+    <string name="data_do_evento">Data do evento:</string>
+    <string name="nome_do_evento">Nome do evento:</string>
+    <string name="cadastrar">Cadastrar</string>
 </resources>

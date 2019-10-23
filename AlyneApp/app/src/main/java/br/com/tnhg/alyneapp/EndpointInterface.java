@@ -12,4 +12,7 @@ public interface EndpointInterface {
 
     @POST("/auth/signin")
     Call<Response> getAuth(@Body Auth auth);
+
+    @POST("/v1/events")
+    Call<Void> setEvento(@Body NewEvent newEvent);
 }

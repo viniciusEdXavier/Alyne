@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-        Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);
         finish();
 //        myIntent.putExtra("key", value); //Optional parameters
@@ -77,5 +77,11 @@ public class LoginActivity extends AppCompatActivity {
 //                Log.d("tag", t.getMessage());
 //            }
 //        });
+    }
+
+    public void createUser(View view) {
+        Intent myIntent = new Intent(this, UserFormActivity.class);
+        startActivity(myIntent);
+
     }
 }

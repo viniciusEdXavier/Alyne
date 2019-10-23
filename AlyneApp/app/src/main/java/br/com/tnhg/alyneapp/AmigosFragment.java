@@ -14,6 +14,6 @@ public class AmigosFragment extends Fragment {
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.data_layout, container, false);
+        return inflater.inflate(R.layout.amigos_data_layout, container, false);
     }
 }

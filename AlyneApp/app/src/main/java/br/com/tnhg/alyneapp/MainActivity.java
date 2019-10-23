@@ -1,6 +1,8 @@
 package br.com.tnhg.alyneapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TabHost;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabLayout = (TabLayout)findViewById(R.id.tab_layout);
-        viewPager = (ViewPager)findViewById(R.id.pager);
+        tabLayout = findViewById(R.id.tab_layout);
+        viewPager = findViewById(R.id.pager);
 
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new AmigosFragment(), getString(R.string.amigos));
@@ -49,4 +51,10 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setCurrentItem(1);
 
     }
+
+    public void clickSend(View view) {
+        Intent myIntent = new Intent(this, EventFormActivity.class);
+        startActivity(myIntent);
+    }
+
 }

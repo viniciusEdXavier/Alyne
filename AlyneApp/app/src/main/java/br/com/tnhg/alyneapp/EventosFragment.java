@@ -1,5 +1,6 @@
 package br.com.tnhg.alyneapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -23,11 +27,8 @@ public class EventosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.event_data_layout, container, false);
-        eventList = EventList.geraLista();
-        eventListView = root.findViewById(R.id.list_view_eventos);
-        EventAdapter eventAdapter = new EventAdapter(eventList, getActivity());
 
-        eventListView.setAdapter(eventAdapter);
         return root;
     }
+
 }
