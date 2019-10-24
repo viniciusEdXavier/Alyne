@@ -39,9 +39,13 @@ public class LoginActivity extends AppCompatActivity {
         {
             ActivityCompat.requestPermissions(this, new String[]{(Manifest.permission.ACCESS_NETWORK_STATE)},2 );
         }
+
         if(sp.getString("token", null)!=null)
         {
-            
+            Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+            myIntent.putExtra("token", sp.getString("token", null));
+            startActivity(myIntent);
+            finish();
         }
     }
 
@@ -59,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("tag", "DEUBOM");
                     SharedPreferences.Editor e = sp.edit();
                     e.putString("token", response.body().getToken());
+                    e.clear();
                     e.commit();
 
                     Log.d("tag", sp.getString("token", null));
