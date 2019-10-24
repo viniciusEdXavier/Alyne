@@ -1,6 +1,6 @@
 package br.com.tnhg.alyneapp;
 
-public class Response {
+public class WSResponse {
     private String token;
 
     public String getToken() {

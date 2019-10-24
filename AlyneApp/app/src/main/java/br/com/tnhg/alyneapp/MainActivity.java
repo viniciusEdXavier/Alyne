@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickSend(View view) {
         Intent myIntent = new Intent(this, EventFormActivity.class);
         startActivity(myIntent);
+        finish();
     }
 
 }

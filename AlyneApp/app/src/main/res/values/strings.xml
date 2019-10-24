@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">AlyneApp</string>
-    <string name="usuario">Usuario:</string>
-    <string name="senha">Senha:</string>
+    <string name="usuario">Nome:</string>
+    <string name="password">Senha:</string>
     <string name="login">LOGIN</string>
     <string name="amigos">Amigos</string>
     <string name="proximos_eventos">Próximos Eventos</string>
     <string name="meus_eventos">Meus Eventos</string>
-    <string name="buscar">buscar</string>
+    <string name="buscar">Buscar</string>
     <string name="local_do_evento">Local do evento:</string>
     <string name="data_do_evento">Data do evento:</string>
     <string name="nome_do_evento">Nome do evento:</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="email">Email:</string>
+    <string name="novo_evento">NOVO EVENTO</string>
 </resources>

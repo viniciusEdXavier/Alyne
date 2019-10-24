@@ -5,7 +5,8 @@
 <Button
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:onClick="clickSend"/>
+    android:onClick="clickSend"
+    android:text="@string/novo_evento"/>
 <ListView
     android:layout_width="match_parent"
     android:layout_height="match_parent"

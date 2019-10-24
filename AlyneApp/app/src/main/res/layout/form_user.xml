@@ -7,15 +7,23 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edtEventoNome"/>
+        android:id="@+id/edtUsuarioNome"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/senha"/>
+        android:text="@string/email"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edtEventoLocal"
+        android:id="@+id/edtUsuarioEmail"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtUsuarioSenha"
         android:inputType="textPassword"/>
     <Button
         android:layout_width="wrap_content"

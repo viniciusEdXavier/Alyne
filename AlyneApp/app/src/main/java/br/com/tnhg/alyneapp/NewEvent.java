@@ -1,22 +1,22 @@
 package br.com.tnhg.alyneapp;
 
 public class NewEvent {
-    private String nome;
-    private String local;
+    private String name;
+    private String location;
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLocal() {
-        return local;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
