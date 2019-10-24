@@ -16,10 +16,10 @@
         android:theme="@style/AppTheme"
 
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".EventFormActivity"></activity>
-        <activity android:name=".UserFormActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.EventFormActivity"></activity>
+        <activity android:name=".activity.UserFormActivity"></activity>
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

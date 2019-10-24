@@ -1,4 +1,4 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,6 +15,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import br.com.tnhg.alyneapp.retrofit.EndpointInterface;
+import br.com.tnhg.alyneapp.EventAdapter;
+import br.com.tnhg.alyneapp.R;
+import br.com.tnhg.alyneapp.retrofit.RetrofitClass;
+import br.com.tnhg.alyneapp.wsentity.Event;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,8 +44,10 @@ public class MeusFragment extends Fragment {
             @Override
             public void onResponse(Call<Event[]> call, Response<Event[]> response) {
                 eventListView = root.findViewById(R.id.list_view_eventos);
+
+                Log.d("tog", eventList.toString());
                 eventList = Arrays.asList(response.body());
-                Log.d("tag", response.body().length+"");
+                Log.d("tog", eventList.toString());
                 EventAdapter eventAdapter = new EventAdapter(eventList, getActivity());
 
                 eventListView.setAdapter(eventAdapter);
@@ -51,7 +58,6 @@ public class MeusFragment extends Fragment {
                 Log.d("tag", t.getMessage());
             }
         });
-
         return root;
     }
 }

@@ -1,7 +1,6 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,14 +11,14 @@ import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import br.com.tnhg.alyneapp.retrofit.EndpointInterface;
+import br.com.tnhg.alyneapp.EventAdapter;
+import br.com.tnhg.alyneapp.R;
+import br.com.tnhg.alyneapp.retrofit.RetrofitClass;
+import br.com.tnhg.alyneapp.wsentity.Event;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,8 +44,14 @@ public class EventosFragment extends Fragment {
             @Override
             public void onResponse(Call<Event[]> call, Response<Event[]> response) {
                 eventListView = root.findViewById(R.id.list_view_eventos);
-                eventList = Arrays.asList(response.body());
-                Log.d("tag", response.body().length+"");
+
+                Log.d("tog", eventList.toString());
+                for (int i = 0; i<response.body().length;i++)
+                {
+                    if(response.body()[i]!=null)
+                       eventList.add(response.body()[i]);
+                }
+                Log.d("tog", eventList.toString());
                 EventAdapter eventAdapter = new EventAdapter(eventList, getActivity());
 
                 eventListView.setAdapter(eventAdapter);

@@ -1,4 +1,4 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+
+import br.com.tnhg.alyneapp.fragment.AmigosFragment;
+import br.com.tnhg.alyneapp.fragment.EventosFragment;
+import br.com.tnhg.alyneapp.fragment.MeusFragment;
+import br.com.tnhg.alyneapp.R;
+import br.com.tnhg.alyneapp.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
     public void clickSend(View view) {
         Intent myIntent = new Intent(this, EventFormActivity.class);
         startActivity(myIntent);
-        finish();
     }
 
 }

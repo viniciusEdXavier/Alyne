@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import br.com.tnhg.alyneapp.wsentity.Event;
+
 public class EventAdapter extends BaseAdapter {
     List<Event> lista;
     Context context;

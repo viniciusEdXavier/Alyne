@@ -1,4 +1,4 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -13,6 +13,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import br.com.tnhg.alyneapp.retrofit.EndpointInterface;
+import br.com.tnhg.alyneapp.R;
+import br.com.tnhg.alyneapp.retrofit.RetrofitClass;
+import br.com.tnhg.alyneapp.wsentity.Auth;
+import br.com.tnhg.alyneapp.wsentity.WSResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,12 +39,10 @@ public class LoginActivity extends AppCompatActivity {
         {
             ActivityCompat.requestPermissions(this, new String[]{(Manifest.permission.ACCESS_NETWORK_STATE)},2 );
         }
-//        if(sp.getString("token", null)!=null)
-//        {
-//            Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
-//            startActivity(myIntent);
-//            finish();
-//        }
+        if(sp.getString("token", null)!=null)
+        {
+            
+        }
     }
 
     public void login(View view) {
@@ -49,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         String user = userEdt.getText().toString();
         String pass = passEdt.getText().toString();
         EndpointInterface api = RetrofitClass.retrofit.create(EndpointInterface.class);
-        api.getAuth(new Auth( "yohana@gmail.com", "yohana")).enqueue(new Callback<WSResponse>() {
+        api.getAuth(new Auth( user, pass)).enqueue(new Callback<WSResponse>() {
             @Override
             public void onResponse(Call<WSResponse> call, Response<WSResponse> response) {
                 try {

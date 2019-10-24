@@ -1,4 +1,4 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+
+import br.com.tnhg.alyneapp.R;
 
 public class AmigosFragment extends Fragment {
     @Override

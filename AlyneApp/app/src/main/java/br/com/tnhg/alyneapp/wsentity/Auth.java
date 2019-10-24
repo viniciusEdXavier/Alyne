@@ -1,17 +1,13 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.wsentity;
 
-public class User
-{
-    String name;
-    String email;
-    String password;
+public class Auth {
 
-    public String getName() {
-        return name;
-    }
+    private String email;
+    private String password;
 
-    public void setName(String name) {
-        this.name = name;
+    public Auth(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
     public String getEmail() {

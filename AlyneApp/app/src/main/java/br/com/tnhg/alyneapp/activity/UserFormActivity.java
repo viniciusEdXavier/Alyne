@@ -1,13 +1,16 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.activity;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import br.com.tnhg.alyneapp.retrofit.EndpointInterface;
+import br.com.tnhg.alyneapp.R;
+import br.com.tnhg.alyneapp.retrofit.RetrofitClass;
+import br.com.tnhg.alyneapp.wsentity.User;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,11 +27,6 @@ public class UserFormActivity extends AppCompatActivity {
     }
 
     public void submit(View view) {
-//        Intent myIntent = new Intent(UserFormActivity.this, LoginActivity.class);
-//        startActivity(myIntent);
-//        finish();
-//        myIntent.putExtra("key", value); //Optional parameters
-//
         EditText nomeEdt = findViewById(R.id.edtUsuarioNome);
         EditText emailEdt = findViewById(R.id.edtUsuarioEmail);
         EditText senhaEdt = findViewById(R.id.edtUsuarioSenha);
@@ -40,19 +38,12 @@ public class UserFormActivity extends AppCompatActivity {
         user.setName(nome);
         user.setEmail(email);
         user.setPassword(senha);
-//
         EndpointInterface api = RetrofitClass.retrofit.create(EndpointInterface.class);
         api.setUser(user).enqueue(new Callback<Void>(){
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 try {
                     Log.d("tag", "DEUBOM");
-                    if(response.isSuccessful())
-                        Log.d("tag", "foi");
-                    else
-                        Log.d("tag", "naofoi");
-//                    Intent myIntent = new Intent(mainActivity, MainActivity.class);
-//                    startActivity(myIntent);
                     finish();
                 }
                 catch (Exception e){
@@ -67,30 +58,5 @@ public class UserFormActivity extends AppCompatActivity {
                 Log.d("tag", t.getMessage());
             }
         });
-//        api.getAuth(new Auth(user, pass)).enqueue(new Callback<WSResponse>() {
-//            @Override
-//            public void onResponse(Call<WSResponse> call, retrofit2.WSResponse<WSResponse> response) {
-//                try {
-//                    Log.d("tag", "DEUBOM");
-//                    if(response.isSuccessful())
-//                        Toast.makeText(mainActivity, response.body().toString(), Toast.LENGTH_SHORT).show();
-//                    else
-//                        Toast.makeText(mainActivity, "null", Toast.LENGTH_SHORT).show();
-//                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
-//                    startActivity(myIntent);
-//                    finish();
-//                }
-//                catch (Exception e){
-//                    Log.e("tag", e.getMessage());
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<WSResponse> call, Throwable t) {
-//                Log.d("tag", "FALHA CATASTRÓFICA");
-//                Log.d("tag", t.getMessage());
-//            }
-//        });
     }
 }

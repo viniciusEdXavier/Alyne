@@ -1,7 +1,10 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.retrofit;
 
-import java.util.List;
-
+import br.com.tnhg.alyneapp.wsentity.Auth;
+import br.com.tnhg.alyneapp.wsentity.Event;
+import br.com.tnhg.alyneapp.wsentity.NewEvent;
+import br.com.tnhg.alyneapp.wsentity.User;
+import br.com.tnhg.alyneapp.wsentity.WSResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;

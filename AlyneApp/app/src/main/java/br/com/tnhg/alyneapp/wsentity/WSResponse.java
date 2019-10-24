@@ -1,4 +1,4 @@
-package br.com.tnhg.alyneapp;
+package br.com.tnhg.alyneapp.wsentity;
 
 public class WSResponse {
     private String token;
